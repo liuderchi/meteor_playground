@@ -2,12 +2,13 @@
 
 // import react
 import React from 'react';
+import ImageDetail from './image_detail';
 
 // create component
 const ImageList = () => {  // NOTE component is a function obj
   return (
     <ul>
-      <li>Image Detail</li>
+      <ImageDetail />
     </ul>
   );  // NOTE use braces to wrap JSX
 };
