@@ -4,9 +4,12 @@
 import React from 'react';
 
 // create component
-const ImageDetail = () => {
+const ImageDetail = (props) => {
   return (
-    <div>Image Detail</div>
+    <li>  {/* NOTE you should return one root DOM element considering comment*/}
+      <img src={props.image.link} />
+      {props.image.title}
+    </li>
   );
 };
 
