@@ -1,0 +1,36 @@
+{
+  "_source": "http://amobiz.github.io/2015/12/21/applying-eslint-using-atom-linter-eslint/",
+  "_source_2": "http://stackoverflow.com/questions/30294870/how-to-config-eslint-for-react-on-atom-editor",
+  "_NOTE": "eslintrc for react jsx in atom editor, supported by atom pkg atom-react",
+  "eslintConfig": {
+    "root": true
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "globals": {
+  },
+  "extends": "eslint:recommended",
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "rules": {
+    "no-console":0,
+    "no-unused-vars": [
+      1,
+      {
+        "vars": "all",
+        "args": "after-used"
+      }],
+    "indent": ["warn", 2],
+    "semi": [1, "always"],
+    "quotes": [1, "single"],
+    "linebreak-style": [1, "unix"]
+  }
+}
