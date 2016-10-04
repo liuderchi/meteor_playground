@@ -14,13 +14,14 @@ const IMAGES = [
 // create component
 const ImageList = () => {  // NOTE component is a function obj
 
-  const RenderedImages = IMAGES.map(function(image) {
-    return <ImageDetail image={image}/>
-  });
+  const RenderedImages = IMAGES.map(image =>
+    <ImageDetail key={image.title} image={image}/>
+  );
+  // NOTE omit return and curly braces for single return statement
+  // add key prop to suppress warn
 
   return (
     <ul className="media-list list-group">
-      {/* NOTE return repeation of ImageDetail, using curly braces */}
       {RenderedImages}
     </ul>
   );  // NOTE use braces to wrap JSX
