@@ -19,7 +19,7 @@ const ImageList = () => {  // NOTE component is a function obj
   });
 
   return (
-    <ul>
+    <ul className="media-list list-group">
       {/* NOTE return repeation of ImageDetail, using curly braces */}
       {RenderedImages}
     </ul>
