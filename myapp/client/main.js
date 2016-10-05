@@ -9,11 +9,26 @@ import ImageList from './components/image_list';
 
 // Create a component
 class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = { images: [] };
+  }
   componentWillMount() {
     axios.get('https://api.imgur.com/3/gallery/hot/viral/0')
-      .then( response => console.log(response) );
+      .then( response => {
+        // NOTE set state in smart way by react, would render() automatically
+        this.setState({images: response.data.data});
+
+        // NOTE NEVER DO THIS:
+        // this.state.images = response.data.data;
+        // this.render();
+      });
+      // NOTE we want do re-render in Callback
+      //      should using state which Component has access to
+      //      state of App changes > re-render App > re-render child components
   }
   render() {
+    console.log(this.state.images);  // NOTE would call each time re-render
     return (
       <div>
         <ImageList />
