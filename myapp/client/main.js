@@ -2,15 +2,22 @@
 
 // Import the React library
 import React from 'react';
+import { Component } from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ImageList from './components/image_list';
 
 // Create a component
-const App = () =>
-  <div>
-    <ImageList />
-  </div>
+// const App = () =>
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <ImageList />
+      </div>
+    );
+  }
+}
 
 // Render this root App component to the screen
 Meteor.startup(() => {
