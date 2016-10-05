@@ -20,3 +20,8 @@
 
   - `cd myapp && meteor`
       - server will listen at port 3000
+
+## NOTE
+
+  - js syntax: using ES6 rather than ES5 in most of this repo
+      - [ES5 v.s. ES6 comparisons](http://blog.techbridge.cc/2016/04/04/react-react-native-es5-es6-cheat-sheet/)

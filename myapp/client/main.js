@@ -2,14 +2,17 @@
 
 // Import the React library
 import React from 'react';
-import { Component } from 'react';
+import { Component } from 'react';  // NOTE import React.Component as Component
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ImageList from './components/image_list';
 
 // Create a component
-// const App = () =>
 class App extends Component {
+  componentWillMount() {
+    axios.get('https://api.imgur.com/3/gallery/hot/viral/0')
+      .then( response => console.log(response) );
+  }
   render() {
     return (
       <div>
@@ -23,6 +26,4 @@ class App extends Component {
 Meteor.startup(() => {
   ReactDOM.render(<App />, document.querySelector('.container'));
   // NOTE ReactDOM is usually used one time
-  axios.get('https://api.imgur.com/3/gallery/hot/viral/0')
-    .then( response => console.log(response) );
 });
