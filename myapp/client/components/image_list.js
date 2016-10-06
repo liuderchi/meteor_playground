@@ -4,17 +4,12 @@
 import React from 'react';
 import ImageDetail from './image_detail';
 
-// dummy image data
-const IMAGES = [
-  {title: 'Pen', link: 'https://dummyimage.com/300x150/000/fff'},
-  {title: 'Apple', link: 'https://dummyimage.com/300x150/000/fff'},
-  {title: 'Apple Pen', link: 'https://dummyimage.com/300x150/000/fff'}
-];
-
 // create component
-const ImageList = () => {  // NOTE component is a function obj
+const ImageList = (props) => {  // NOTE component is a function obj
 
-  const RenderedImages = IMAGES.map(image =>
+  const ValidImages = props.images.filter(image => !image.is_album);
+
+  const RenderedImages = ValidImages.map(image =>
     <ImageDetail key={image.title} image={image}/>
   );
   // NOTE omit return and curly braces for single return statement

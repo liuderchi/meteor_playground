@@ -31,7 +31,7 @@ class App extends Component {
     console.log(this.state.images);  // NOTE would call each time re-render
     return (
       <div>
-        <ImageList />
+        <ImageList images={this.state.images}/>
       </div>
     );
   }
