@@ -1,13 +1,10 @@
-// Any JS in here is automatically ran for us
-
-// Import the React library
 import React from 'react';
 import { Component } from 'react';  // NOTE import React.Component as Component
 import ReactDOM from 'react-dom';
 import axios from 'axios';
 import ImageList from './components/image_list';
 
-// Create a component
+// Create react component
 class App extends Component {
   constructor(props){
     super(props);
@@ -23,8 +20,8 @@ class App extends Component {
         // this.state.images = response.data.data;
         // this.render();
       });
-      // NOTE we want do re-render in Callback
-      //      should using state which Component has access to
+      // NOTE we want do re-render in api Callback
+      //      should using this.state which Component has access to
       //      state of App changes > re-render App > re-render child components
   }
   render() {

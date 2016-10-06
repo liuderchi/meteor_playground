@@ -1,10 +1,6 @@
-// create image detail component
-
-// import react
 import React from 'react';
 import ImageScore from './image_score';
 
-// create component
 const ImageDetail = (props) =>
   <li>
     <div className="media-left">

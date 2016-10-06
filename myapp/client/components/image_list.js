@@ -1,11 +1,8 @@
-// create image list component
-
-// import react
 import React from 'react';
 import ImageDetail from './image_detail';
 
-// create component
-const ImageList = (props) => {  // NOTE component is a function obj
+// NOTE ImageList component is a function obj
+const ImageList = (props) => {
 
   const ValidImages = props.images.filter(image => !image.is_album);
 
@@ -22,5 +19,4 @@ const ImageList = (props) => {  // NOTE component is a function obj
   );  // NOTE use braces to wrap JSX
 };
 
-// export created component
 export default ImageList;
