@@ -10,7 +10,6 @@ Meteor.startup( () => {
   console.log(numberRecords);
 
   if (!numberRecords) {
-    // TODO generate data if not existed in db
 
     _.times(5000, () => {    // NOTE repeate 5000 times
       const {name, email, phone} = helpers.createCard();  //es6 destructing assign
@@ -20,4 +19,9 @@ Meteor.startup( () => {
       });
     });
   }
+
+  // define publishment
+  Meteor.publish('employees', () => {
+    return Employees.find({}, {limit: 20});
+  });
 });
