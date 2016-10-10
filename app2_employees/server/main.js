@@ -1,13 +1,23 @@
 // Executed on Server
-
+import _ from 'lodash';
+import { helpers, image } from 'faker';
 import { Meteor } from 'meteor/meteor';
 import { Employees } from '../import/collections/employees';
 
 Meteor.startup( () => {
 
   const numberRecords = Employees.find({}).count();
+  console.log(numberRecords);
 
   if (!numberRecords) {
     // TODO generate data if not existed in db
+
+    _.times(5000, () => {    // NOTE repeate 5000 times
+      const {name, email, phone} = helpers.createCard();  //es6 destructing assign
+      Employees.insert({
+        name, email, phone,    //es6
+        avatar: image.avatar()
+      });
+    });
   }
 });
