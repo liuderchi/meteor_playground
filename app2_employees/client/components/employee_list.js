@@ -2,6 +2,8 @@ import React from 'react';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Employees } from '../../import/collections/employees.js';
 // NOTE use curly braces to import Employees.Employees
+import EmployeeDetail from './employee_detail';
+
 
 const EmployeeList = (props) => {
   // props.employees : array of Employees obj
@@ -9,7 +11,7 @@ const EmployeeList = (props) => {
   return (
     <div>
       <div className="employee-list">
-        Employee List
+        {props.employees.map((employee) => <EmployeeDetail />)}
       </div>
     </div>
   );
