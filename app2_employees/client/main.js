@@ -5,9 +5,7 @@ import EmployeeList from './components/employee_list';
 
 const App = () => {
   return (
-    <h1>
-      <EmployeeList />
-    </h1>
+    <EmployeeList />
   );
 };
 
