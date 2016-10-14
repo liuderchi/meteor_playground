@@ -12,7 +12,7 @@ const EmployeeList = (props) => {
     <div>
       <div className="employee-list">
         {props.employees.map((employee) =>
-          <EmployeeDetail employee={employee}/>
+          <EmployeeDetail key={employee._id} employee={employee}/>
         )}
       </div>
     </div>
