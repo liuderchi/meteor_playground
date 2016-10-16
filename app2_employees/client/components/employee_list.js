@@ -4,6 +4,7 @@ import { Employees } from '../../import/collections/employees.js';
 // NOTE use curly braces to import Employees.Employees
 import EmployeeDetail from './employee_detail';
 
+const PER_PAGE = 20;  // NOTE display num
 
 const EmployeeList = (props) => {
   // props.employees : array of Employees obj
@@ -16,7 +17,9 @@ const EmployeeList = (props) => {
         )}
       </div>
       <button
-        onClick={() => {console.log('clicked');}}
+        onClick={() => {
+          Meteor.subscribe('employees', 40);  //hard code to display 40 records
+        }}
         className="btn btn-primary">
         Load More...
       </button>
@@ -27,7 +30,8 @@ const EmployeeList = (props) => {
 export default createContainer(() => {
 
   // setup subscription
-  Meteor.subscribe('employees');
+  Meteor.subscribe('employees', PER_PAGE);
+  // NOTE pass PER_PAGE to server publish()
 
   // return an object,
   // whatever it returns will be inject to EmployeeList as props

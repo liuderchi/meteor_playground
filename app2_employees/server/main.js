@@ -21,7 +21,7 @@ Meteor.startup( () => {
   }
 
   // define publishment
-  Meteor.publish('employees', () => {
-    return Employees.find({}, {limit: 20});
+  Meteor.publish('employees', (per_page) => {  // NOTE arg from client subscribe()
+    return Employees.find({}, {limit: per_page});
   });
 });
