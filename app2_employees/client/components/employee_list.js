@@ -15,6 +15,11 @@ const EmployeeList = (props) => {
           <EmployeeDetail key={employee._id} employee={employee}/>
         )}
       </div>
+      <button
+        onClick={() => {console.log('clicked');}}
+        className="btn btn-primary">
+        Load More...
+      </button>
     </div>
   );
 };
