@@ -8,6 +8,18 @@ import EmployeeDetail from './employee_detail';
 const PER_PAGE = 20;  // NOTE display num
 
 class EmployeeList extends Component {
+
+  componentWillMount() {    // called when init
+    this.page = 1;
+  }
+
+  handleButtonClick() {
+    Meteor.subscribe('employees', PER_PAGE * (this.page + 1));
+    // update subscription, not recreating subscription
+    // improve transmission only 20+ employees
+    this.page += 1;
+  }
+
   // NOTE this.props is set in default consctructor()
   // this.props.employees : array of Employees obj
   render() {
@@ -19,14 +31,11 @@ class EmployeeList extends Component {
           )}
         </div>
         <button
-          onClick={() => {
-            Meteor.subscribe('employees', 40);  //hard code to display 40 records
-            // update subscription, not recreating subscription
-            // NOTE we want to improve transmission only 20+ employees
-          }}
+          onClick={this.handleButtonClick.bind(this)}
           className="btn btn-primary">
           Load More...
         </button>
+        {/*NOTE use .bind(this) to pass function obj as Cb*/}
       </div>
     );
   }
