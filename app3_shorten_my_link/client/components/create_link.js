@@ -3,12 +3,19 @@
 import React, { Component } from 'react';
 
 class LinkCreate extends Component {
+  handleSubmit(event) {
+    event.preventDefault(); // don't handle default event
+
+    // NOTE extract data from <form>
+    console.log(this.refs.link.value);
+  }
+
   render() {
     return (
-      <form>
+      <form onSubmit={this.handleSubmit.bind(this)}>
         <div className="form-group">
           <label>Link to Shorten</label>
-          <input className="form-control" />
+          <input ref="link" className="form-control" />
         </div>
         <button className="btn btn-primary">Shorten!</button>
       </form>
