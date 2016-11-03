@@ -6,8 +6,8 @@ class LinkCreate extends Component {
   handleSubmit(event) {
     event.preventDefault(); // don't handle default event
 
-    // NOTE extract data from <form>
-    console.log(this.refs.link.value);
+    // NOTE Meteor.call(my_key, func_args)
+    Meteor.call('links.insert', this.refs.link.value);
   }
 
   render() {
