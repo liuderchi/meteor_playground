@@ -10,13 +10,18 @@ Meteor.startup(() => {
 });
 
 // when user hit localhost:3000/abcd
-function onRoute(req, res, next) {    // next: call next middleware
+function onRoute(req, res, next) {
   // find match record from req token
   const link = Links.findOne({ token: req.params.token});
 
-  // if found, redirect to that url
-
-  // if not found, send user to original app
+  if (link) {
+    // if found, redirect to that url
+    res.writeHead(307, { 'Location': link.url});
+    res.end();
+  } else {
+    // if not found, send user to original app
+    next();   //call next middleware
+  }
 
 }
 
