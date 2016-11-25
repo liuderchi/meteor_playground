@@ -15,8 +15,12 @@ function onRoute(req, res, next) {
   const link = Links.findOne({ token: req.params.token});
 
   if (link) {
+    // mongo modifier: an object describing how to update a document
+    Links.update(link, {$inc: {clicks: 1}})
+
     // if found, redirect to that url
     res.writeHead(307, { 'Location': link.url});
+    console.log('redirecting to ...', link.url);
     res.end();
   } else {
     // if not found, send user to original app

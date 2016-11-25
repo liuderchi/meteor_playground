@@ -14,7 +14,7 @@ class LinkList extends Component {
       return (
         <tr key={token}>
           <td>{url}</td>
-          <td><a href={`${token}`}>{shortLink}</a></td>
+          <td><a href={`${token}`} target="_blank">{shortLink}</a></td>
           <td>{clicks}</td>
         </tr>
       );
