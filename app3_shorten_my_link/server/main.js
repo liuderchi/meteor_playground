@@ -20,7 +20,6 @@ function onRoute(req, res, next) {
 
     // if found, redirect to that url
     res.writeHead(307, { 'Location': link.url});
-    console.log('redirecting to ...', link.url);
     res.end();
   } else {
     // if not found, send user to original app

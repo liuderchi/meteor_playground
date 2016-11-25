@@ -12,7 +12,7 @@
   - Ubuntu
   - meteor
       - create app `meteor create myapp`
-      - install bootstrap ``
+      - install bootstrap `meteor add twbs:bootstrap`
   - npm
       - `npm install react react-dom --save`
 
