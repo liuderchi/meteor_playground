@@ -3,7 +3,12 @@
   "_source_2": "http://stackoverflow.com/questions/30294870/how-to-config-eslint-for-react-on-atom-editor",
   "_NOTE": "eslintrc for react jsx in atom editor, supported by atom pkg atom-react",
   "eslintConfig": {
-    "root": true
+    "root": true,
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    }
   },
   "env": {
     "browser": true,
@@ -32,6 +37,11 @@
     "indent": ["warn", 2],
     "semi": [1, "always"],
     "quotes": [1, "single"],
-    "linebreak-style": [1, "unix"]
-  }
+    "linebreak-style": [1, "unix"],
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+  },
+    "plugins": [
+    "react"
+  ]
 }
