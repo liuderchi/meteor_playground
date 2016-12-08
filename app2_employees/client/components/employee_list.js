@@ -33,7 +33,7 @@ class EmployeeList extends Component {
         <button
           onClick={this.handleButtonClick.bind(this)}
           className="btn btn-primary">
-          Load More...
+          Load #{PER_PAGE*this.page} ~ #{PER_PAGE*(this.page+1)} ...
         </button>
         {/*NOTE use .bind(this) to pass outer this into inner function*/}
       </div>
