@@ -35,7 +35,7 @@ class EmployeeList extends Component {
           className="btn btn-primary">
           Load More...
         </button>
-        {/*NOTE use .bind(this) to pass function obj as Cb*/}
+        {/*NOTE use .bind(this) to pass outer this into inner function*/}
       </div>
     );
   }
