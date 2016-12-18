@@ -8,6 +8,7 @@ Meteor.methods({
       sharedWith: [],
       ownerId: this.userId
       // NOTE this.userId is meteor method RPC API
+      // NOTE guest without auth can create bin
     });
   }
 });
