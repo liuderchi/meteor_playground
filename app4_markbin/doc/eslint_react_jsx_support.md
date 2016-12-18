@@ -10,7 +10,7 @@
 
 ## NOTE
 
-  - `$ npm install eslint-plugin-react` to install locally
+  - `$ npm install eslint eslint-plugin-react --save` to install locally
   - add some name-value pairs in .eslintrc
       - `eslintConfig.parserOptions`
       - `"plugins": [ "react" ]`
