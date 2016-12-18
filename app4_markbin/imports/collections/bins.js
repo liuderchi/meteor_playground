@@ -10,6 +10,10 @@ Meteor.methods({
       // NOTE this.userId is meteor method RPC API
       // NOTE guest without auth can create bin
     });
+  },
+
+  'bins.remove': function(bin) {
+    Bins.remove(bin);
   }
 });
 
