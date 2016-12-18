@@ -11,9 +11,8 @@ const routes = (
   <Router history={browserHistory}>
     {/*NOTE jsx component as a Router*/}
     <Route path="/" component={App}>
-      {/*TODO render BinList when path is / */}
-      <Route path="list" component={BinsList}></Route>
-
+      {/*NOTE render BinList when path is / */}
+      <IndexRoute component={BinsList} />
       {/*TODO render BinMain when path is /bins/:binId */}
       <Route path="bins" component={BinsMain}></Route>
     </Route>
