@@ -13,8 +13,8 @@ const routes = (
     <Route path="/" component={App}>
       {/*NOTE render BinList when path is / */}
       <IndexRoute component={BinsList} />
-      {/*TODO render BinMain when path is /bins/:binId */}
-      <Route path="bins" component={BinsMain}></Route>
+      {/*NOTE render BinMain when path is /bins/:binId */}
+      <Route path="bins/:binId" component={BinsMain}></Route>
     </Route>
   </Router>
 );
