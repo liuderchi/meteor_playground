@@ -4,9 +4,11 @@ class BinsShare extends Component {
   onShareClick() {
     const email = this.refs.email.value;
     Meteor.call('bins.share', this.props.bin, email);
+    this.refs.email.value = '';
   }
 
   onUnshareClick(bin, email) {
+    // TODO only owner can unshare
     Meteor.call('bins.unshare', bin, email);
   }
 
