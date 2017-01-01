@@ -24,6 +24,7 @@ export default createContainer((props) => {
 
   const { binId } = props.params;  // NOTE props arg is coming from BinsMain Component
   Meteor.subscribe('bins');  // subscribe even we did it in BinsList
+  Meteor.subscribe('sharedBins');
 
   return { bin: Bins.findOne(binId) };  // access it by props.bin in reder() scope
 }, BinsMain);

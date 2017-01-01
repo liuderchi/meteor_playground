@@ -41,6 +41,7 @@ class BinsList extends Component {
 
 export default createContainer( () => {
   Meteor.subscribe('bins');
+  Meteor.subscribe('sharedBins');
 
   // obj will be injected to LinkList, access by this.props.bins
   return { bins: Bins.find({}).fetch() };
