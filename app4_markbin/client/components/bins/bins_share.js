@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class BinsShare extends Component {
   onShareClick() {
     const email = this.refs.email.value;
-    console.log('sharing email', email);
+    Meteor.call('bins.share', this.props.bin, email);
   }
 
   render() {
