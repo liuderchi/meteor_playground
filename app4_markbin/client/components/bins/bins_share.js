@@ -6,6 +6,18 @@ class BinsShare extends Component {
     Meteor.call('bins.share', this.props.bin, email);
   }
 
+  renderSharedList() {
+    return this.props.bin.sharedWith.map(function(email){
+      return (
+        <button
+          key={email}
+          className="btn btn-default">
+            {email}
+        </button>
+      );
+    });
+  }
+
   render() {
     return (
       <footer className="bins-share">
@@ -18,6 +30,12 @@ class BinsShare extends Component {
               Share Bin
             </button>
           </div>
+        </div>
+        <div>
+          Shared With:
+        </div>
+        <div className="btn-group">
+          {this.renderSharedList()}
         </div>
       </footer>
     );
