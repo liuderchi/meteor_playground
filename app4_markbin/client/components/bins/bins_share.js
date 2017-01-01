@@ -6,10 +6,15 @@ class BinsShare extends Component {
     Meteor.call('bins.share', this.props.bin, email);
   }
 
+  onUnshareClick(bin, email) {
+    Meteor.call('bins.unshare', bin, email);
+  }
+
   renderSharedList() {
-    return this.props.bin.sharedWith.map(function(email){
+    return this.props.bin.sharedWith.map((email) => {
       return (
         <button
+          onClick={() => this.onUnshareClick(this.props.bin, email)}
           key={email}
           className="btn btn-default">
             {email}
